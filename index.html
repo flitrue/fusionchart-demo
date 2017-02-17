@@ -1,0 +1,209 @@
+<html>
+<head>
+    <title>台湾地域风向指标</title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="fusioncharts/fusioncharts.js"></script>
+    <script type="text/javascript" src="fusioncharts/themes/fusioncharts.theme.fint.js"></script>
+</head>
+
+<body>
+<div id="chartContainer"></div>
+</body>
+<script type="text/javascript">
+    FusionCharts.ready(function(){
+        var salesByState = new FusionCharts({
+            "type": "maps/taiwan",
+            "renderAt": "chartContainer",
+            "width": "800",
+            "height": "600",
+            "loadMessage": "努力加载中，请稍等...",
+            "dataFormat": "json",
+            "dataSource": {
+                "chart": {
+                    "caption": "台湾地域风向指标",
+                    "logoURL": "",
+                    "showToolTip": 0,
+                    "exportEnabled": 1,
+                    "exportFormats": "PNG=导出为png|JPG=导出为JPG|PDF=导出为PDF",
+                    "exportFileName": "台湾地域风向指标",
+                    "useSNameInToolTip": 0,
+                    "animation": "0",
+                    "showbevel": "0",
+                    "usehovercolor": "1",
+                    "canvasbordercolor": "FFFFFF",
+                    "bordercolor": "FFFFFF",
+                    "showlegend": "0",
+                    "showshadow": "0",
+                    "legendposition": "BOTTOM",
+                    "legendborderalpha": "0",
+                    "legendbordercolor": "ffffff",
+                    "legendallowdrag": "0",
+                    "legendshadow": "0",
+                    "connectorcolor": "000000",
+                    "fillalpha": "80",
+                    "hovercolor": "CCCCCC",
+                    "showborder": 0
+                },
+                "markers": {
+                    "shapes": [
+                        {
+                            "id": "myCustomShape",
+                            "type": "circle",
+                            "labelPadding": 0,
+                            "borderColor": "#000000",
+                            "borderAlpha": 10,
+                            "fillColor": "#83BDFF",
+                            "borderThickness": 5
+                        }
+                    ],
+                    "items": [{
+                        "id": "taibei",
+                        "shapeid": "myCustomShape",
+                        "x": "5.23",
+                        "y": "50.9",
+                        "label": "台北",
+                        "labelpos": "top",
+                        "link": "http://www.baidu.com/",
+                        "scale": 0.5
+                    }]
+                },
+                "entityDef": {
+                    "internalId": "HS",
+                    "newId": "合适"
+                },
+                "colorrange": {
+                    "minvalue": "0",
+                    "startlabel": "Low",
+                    "endlabel": "High",
+                    "code": "e44a00",
+                    "gradient": "1",
+                    "color": [
+                        {
+                            "maxvalue": 30000,
+                            "displayvalue": "Average",
+                            "code": "f8bd19"
+                        },
+                        {
+                            "maxvalue": 100000,
+                            "code": "6baa01"
+                        }
+                    ],
+                    "maxvalue": 0
+                },
+                "data": [
+                    {
+                        "data": [
+                            {
+                                "id": "10",
+                                "value": "3006"
+                            },
+                            {
+                                "id": "11",
+                                "value": "1889"
+                            },
+                            {
+                                "id": "12",
+                                "value": "69556"
+                            },
+                            {
+                                "id": "13",
+                                "value": "79410"
+                            },
+                            {
+                                "id": "14",
+                                "value": "39983"
+                            },
+                            {
+                                "id": "15",
+                                "value": "60617"
+                            },
+                            {
+                                "id": "16",
+                                "value": "40245"
+                            },
+                            {
+                                "id": "17",
+                                "value": "46554"
+                            },
+                            {
+                                "id": "18",
+                                "value": "53905"
+                            },
+                            {
+                                "id": "19",
+                                "value": "31318"
+                            },
+                            {
+                                "id": "20",
+                                "value": "69869"
+                            },
+                            {
+                                "id": "21",
+                                "value": "75522"
+                            },
+                            {
+                                "id": "22",
+                                "value": "74883"
+                            },
+                            {
+                                "id": "23",
+                                "value": "55317"
+                            },
+                            {
+                                "id": "24",
+                                "value": "34945"
+                            },
+                            {
+                                "id": "25",
+                                "value": "36672"
+                            },
+                            {
+                                "id": "07",
+                                "value": "31227"
+                            },
+                            {
+                                "id": "03",
+                                "value": "72664"
+                            },
+                            {
+                                "id": "09",
+                                "value": "45732"
+                            },
+                            {
+                                "id": "05",
+                                "value": "50745"
+                            },
+                            {
+                                "id": "02",
+                                "value": "73528"
+                            },
+                            {
+                                "id": "08",
+                                "value": "83014"
+                            },
+                            {
+                                "id": "06",
+                                "value": "87739"
+                            },
+                            {
+                                "id": "01",
+                                "value": "87739"
+                            },
+                            {
+                                "id": "04",
+                                "value": "87739"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "events": {
+                "entityClick": function() {
+                    alert("You have clicked on");
+                }
+            }
+        });
+        salesByState.render();
+    });
+</script>
+</html>

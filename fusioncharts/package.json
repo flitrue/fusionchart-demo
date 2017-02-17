@@ -1,0 +1,97 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "fusioncharts",
+        "scope": null,
+        "escapedName": "fusioncharts",
+        "name": "fusioncharts",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "D:\\workspace"
+    ]
+  ],
+  "_cnpm_publish_time": 1484036963840,
+  "_from": "fusioncharts@latest",
+  "_id": "fusioncharts@3.11.3-sr.1",
+  "_inCache": true,
+  "_location": "/fusioncharts",
+  "_nodeVersion": "6.9.1",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/fusioncharts-3.11.3-sr.1.tgz_1484036963600_0.47872528759762645"
+  },
+  "_npmUser": {
+    "name": "fusioncharts",
+    "email": "mail@labs.fusioncharts.com"
+  },
+  "_npmVersion": "3.10.8",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "fusioncharts",
+    "scope": null,
+    "escapedName": "fusioncharts",
+    "name": "fusioncharts",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npm.taobao.org/fusioncharts/download/fusioncharts-3.11.3-sr.1.tgz",
+  "_shasum": "deb4b8d6f5c96f416bcb4d87ee7cf2558bc6196d",
+  "_shrinkwrap": null,
+  "_spec": "fusioncharts",
+  "_where": "D:\\workspace",
+  "author": {
+    "name": "FusionCharts Technologies",
+    "email": "support@fusioncharts.com"
+  },
+  "bugs": {
+    "url": "http://www.fusioncharts.com/contact-support/"
+  },
+  "dependencies": {},
+  "description": "FusionCharts JavaScript charting framework for distribution",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "deb4b8d6f5c96f416bcb4d87ee7cf2558bc6196d",
+    "size": 683221,
+    "noattachment": false,
+    "tarball": "http://registry.npm.taobao.org/fusioncharts/download/fusioncharts-3.11.3-sr.1.tgz"
+  },
+  "gitHead": "0fb536cc2f52deb9dc8807c9750c1ea307d05945",
+  "homepage": "http://www.fusioncharts.com",
+  "keywords": [
+    "javascript-charts",
+    "interactive-charts",
+    "charts",
+    "graphs",
+    "visualization",
+    "data-visualization",
+    "dataviz",
+    "browserify",
+    "webpack"
+  ],
+  "license": "http://www.fusioncharts.com/buy/",
+  "main": "fusioncharts.js",
+  "maintainers": [
+    {
+      "name": "fusioncharts",
+      "email": "mail@labs.fusioncharts.com"
+    }
+  ],
+  "name": "fusioncharts",
+  "optionalDependencies": {},
+  "publish_time": 1484036963840,
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fusioncharts/fusioncharts-dist.git"
+  },
+  "scripts": {},
+  "version": "3.11.3-sr.1"
+}
