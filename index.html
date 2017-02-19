@@ -44,6 +44,50 @@
                     "hovercolor": "CCCCCC",
                     "showborder": 0
                 },
+              "annotations": {
+                "showbelow": "0",
+                "constrainedScale": 0,//禁止宽高比
+                "scaleText": 1,
+                "groups": [
+                  {
+                    "id": "Callout",
+                    "items": [
+                      {
+                        "id": "CalloutBase",
+                        "type": "rectangle",
+                        "radius": "3",
+                        "x": "500",
+                        "y": "70",
+                        "tox": "580",
+                        "toy": "90",
+                        "alpha": "70",
+                        "fillColor": "#0075c2"
+                      },
+                      {
+                        "id": "CalloutTriangle",
+                        "type": "polygon",
+                        "sides": "3",
+                        "startangle": "270",
+                        "alpha": "90",
+                        "x": "538",
+                        "y": "93",
+                        "fillColor": "#0075c2",
+                        "radius": "9"
+                      },
+                      {
+                        "id": "CalloutLabel",
+                        "type": "Text",
+                        "fontSize": "12",
+                        "bold": "1",
+                        "x": "540",
+                        "y": "80",
+                        "text": '林志玲',
+                        "fillcolor": "#FFFFFF"
+                      }
+                    ]
+                  }
+                ]
+              },
                 "markers": {
                     "shapes": [
                         {
@@ -59,11 +103,10 @@
                     "items": [{
                         "id": "taibei",
                         "shapeid": "myCustomShape",
-                        "x": "5.23",
-                        "y": "50.9",
-                        "label": "台北",
+                        "x": "360",
+                        "y": "70",
+                        "label": "",
                         "labelpos": "top",
-                        "link": "http://www.baidu.com/",
                         "scale": 0.5
                     }]
                 },
@@ -91,117 +134,114 @@
                     "maxvalue": 0
                 },
                 "data": [
-                    {
-                        "data": [
-                            {
-                                "id": "10",
-                                "value": "3006"
-                            },
-                            {
-                                "id": "11",
-                                "value": "1889"
-                            },
-                            {
-                                "id": "12",
-                                "value": "69556"
-                            },
-                            {
-                                "id": "13",
-                                "value": "79410"
-                            },
-                            {
-                                "id": "14",
-                                "value": "39983"
-                            },
-                            {
-                                "id": "15",
-                                "value": "60617"
-                            },
-                            {
-                                "id": "16",
-                                "value": "40245"
-                            },
-                            {
-                                "id": "17",
-                                "value": "46554"
-                            },
-                            {
-                                "id": "18",
-                                "value": "53905"
-                            },
-                            {
-                                "id": "19",
-                                "value": "31318"
-                            },
-                            {
-                                "id": "20",
-                                "value": "69869"
-                            },
-                            {
-                                "id": "21",
-                                "value": "75522"
-                            },
-                            {
-                                "id": "22",
-                                "value": "74883"
-                            },
-                            {
-                                "id": "23",
-                                "value": "55317"
-                            },
-                            {
-                                "id": "24",
-                                "value": "34945"
-                            },
-                            {
-                                "id": "25",
-                                "value": "36672"
-                            },
-                            {
-                                "id": "07",
-                                "value": "31227"
-                            },
-                            {
-                                "id": "03",
-                                "value": "72664"
-                            },
-                            {
-                                "id": "09",
-                                "value": "45732"
-                            },
-                            {
-                                "id": "05",
-                                "value": "50745"
-                            },
-                            {
-                                "id": "02",
-                                "value": "73528"
-                            },
-                            {
-                                "id": "08",
-                                "value": "83014"
-                            },
-                            {
-                                "id": "06",
-                                "value": "87739"
-                            },
-                            {
-                                "id": "01",
-                                "value": "87739"
-                            },
-                            {
-                                "id": "04",
-                                "value": "87739"
-                            }
-                        ]
-                    }
+                  {
+                    "id": "10",
+                    "value": "3006"
+                  },
+                  {
+                    "id": "11",
+                    "value": "1889"
+                  },
+                  {
+                    "id": "12",
+                    "value": "69556"
+                  },
+                  {
+                    "id": "13",
+                    "value": "79410"
+                  },
+                  {
+                    "id": "14",
+                    "value": "39983"
+                  },
+                  {
+                    "id": "15",
+                    "value": "60617"
+                  },
+                  {
+                    "id": "16",
+                    "value": "40245"
+                  },
+                  {
+                    "id": "17",
+                    "value": "46554"
+                  },
+                  {
+                    "id": "18",
+                    "value": "53905"
+                  },
+                  {
+                    "id": "19",
+                    "value": "31318"
+                  },
+                  {
+                    "id": "20",
+                    "value": "69869"
+                  },
+                  {
+                    "id": "21",
+                    "value": "75522"
+                  },
+                  {
+                    "id": "22",
+                    "value": "74883"
+                  },
+                  {
+                    "id": "23",
+                    "value": "55317"
+                  },
+                  {
+                    "id": "24",
+                    "value": "34945"
+                  },
+                  {
+                    "id": "25",
+                    "value": "36672"
+                  },
+                  {
+                    "id": "07",
+                    "value": "31227"
+                  },
+                  {
+                    "id": "03",
+                    "value": "72664"
+                  },
+                  {
+                    "id": "09",
+                    "value": "45732"
+                  },
+                  {
+                    "id": "05",
+                    "value": "50745"
+                  },
+                  {
+                    "id": "02",
+                    "value": "73528"
+                  },
+                  {
+                    "id": "08",
+                    "value": "83014"
+                  },
+                  {
+                    "id": "06",
+                    "value": "87739"
+                  },
+                  {
+                    "id": "01",
+                    "value": "87739"
+                  },
+                  {
+                    "id": "04",
+                    "value": "87739"
+                  }
                 ]
             },
             "events": {
                 "entityClick": function() {
                     alert("You have clicked on");
                 }
-            }
+            },
+
         });
         salesByState.render();
     });

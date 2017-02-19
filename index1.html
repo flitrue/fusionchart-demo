@@ -1,0 +1,99 @@
+<html>
+<head>
+    <title>台湾地域风向指标</title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="fusioncharts/fusioncharts.js"></script>
+    <script type="text/javascript" src="fusioncharts/themes/fusioncharts.theme.fint.js"></script>
+</head>
+
+<body>
+<div id="chartContainer"></div>
+</body>
+<script type="text/javascript">
+    FusionCharts.ready(function(){
+        var salesByState = new FusionCharts({
+            "type": "column2d",
+            "renderAt": "chartContainer",
+            "width": "800",
+            "height": "600",
+            "loadMessage": "努力加载中，请稍等...",
+            "dataFormat": "json",
+            "dataSource": {
+    "chart": {
+        "caption": "Comparison of Quarterly Revenue",
+        "subCaption": "Last Year",
+        "showBorder": "0",
+        "xAxisName": "Quarter",
+        "yAxisName": "Amount (In USD)",
+        "numberPrefix": "$",
+        "yAxisMaxValue": "50000",
+        "showValues": "0",
+        "showTooltip": "0",
+        "animation": "0",
+        "theme": "fint"
+    },
+    "data": [
+        {
+            "label": "Q1",
+            "value": "30400"
+        },
+        {
+            "label": "Q2",
+            "value": "29800"
+        },
+        {
+            "label": "Q3",
+            "value": "21800"
+        },
+        {
+            "label": "Q4",
+            "value": "26800"
+        }
+    ],
+    "annotations": {
+        "showbelow": "0",
+        "groups": [
+            {
+                "id": "Callout",
+                "items": [
+                    {
+                        "id": "CalloutBase",
+                        "type": "rectangle",
+                        "radius": "2",
+                        "alpha": "90",
+                        "fillColor": "#6baa01",
+						"x": "$dataset.0.set.2.x",
+                        "y": "$dataset.0.set.2.y-100",
+						"tox": "$dataset.0.set.2.x+100",
+                        "toy": "$dataset.0.set.2.y-150"
+                    },
+                    {
+                        "id": "CalloutTriangle",
+                        "type": "polygon",
+                        "sides": "3",
+                        "startangle": "270",
+                        "alpha": "90",
+                        "fillColor": "#6baa01",
+                        "radius": "9",
+						"x": "$dataset.0.set.2.x+75",
+                        "y": "$dataset.0.set.2.y-2"
+                    },
+                    {
+                        "id": "CalloutLabel",
+                        "type": "Text",
+                        "fontSize": "12",
+                        "bold": "1",
+                        "fillcolor": "#ffffff",
+						"x": "$dataset.0.set.2.x+75",
+                        "y": "$dataset.0.set.2.y-2"
+                    }
+                ]
+            }
+        ]
+    }
+}
+        });
+        salesByState.render();
+    });
+</script>
+</html>
