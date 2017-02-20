@@ -4,25 +4,31 @@
     <meta charset="utf-8">
     <script type="text/javascript" src="fusioncharts/fusioncharts.js"></script>
     <script type="text/javascript" src="fusioncharts/themes/fusioncharts.theme.fint.js"></script>
+    <script type="text/javascript" src="svg.min.js"></script>
 </head>
 
 <body>
 <div id="chartContainer"></div>
+<button id="shownews">显示新闻</button>
 </body>
 <script type="text/javascript">
+    var title = '台北市';
     FusionCharts.ready(function(){
         var salesByState = new FusionCharts({
+            "id": "taiwan",
             "type": "maps/taiwan",
             "renderAt": "chartContainer",
             "width": "800",
             "height": "600",
             "loadMessage": "努力加载中，请稍等...",
             "dataFormat": "json",
-            "dataSource": {
+            "dataSource":{
                 "chart": {
-                    "caption": "台湾地域风向指标",
+                    "id": "taiwanchart",
+                    //"caption": "台湾地域风向指标",
                     "logoURL": "",
-                    "showToolTip": 0,
+                    "showLabels": 1,
+                    "showToolTip": 1,
                     "exportEnabled": 1,
                     "exportFormats": "PNG=导出为png|JPG=导出为JPG|PDF=导出为PDF",
                     "exportFileName": "台湾地域风向指标",
@@ -42,52 +48,61 @@
                     "connectorcolor": "000000",
                     "fillalpha": "80",
                     "hovercolor": "CCCCCC",
-                    "showborder": 0
+                    "showborder": 0,
+                    "theme": "fint",
+                    "connectorColor": "#0CB2B0",
+                    "connectorHoverColor": "#339933",
                 },
-              "annotations": {
-                "showbelow": "0",
-                "constrainedScale": 0,//禁止宽高比
-                "scaleText": 1,
-                "groups": [
-                  {
-                    "id": "Callout",
-                    "items": [
-                      {
-                        "id": "CalloutBase",
-                        "type": "rectangle",
-                        "radius": "3",
-                        "x": "500",
-                        "y": "70",
-                        "tox": "580",
-                        "toy": "90",
-                        "alpha": "70",
-                        "fillColor": "#0075c2"
-                      },
-                      {
-                        "id": "CalloutTriangle",
-                        "type": "polygon",
-                        "sides": "3",
-                        "startangle": "270",
-                        "alpha": "90",
-                        "x": "538",
-                        "y": "93",
-                        "fillColor": "#0075c2",
-                        "radius": "9"
-                      },
-                      {
-                        "id": "CalloutLabel",
-                        "type": "Text",
-                        "fontSize": "12",
-                        "bold": "1",
-                        "x": "540",
-                        "y": "80",
-                        "text": '林志玲',
-                        "fillcolor": "#FFFFFF"
-                      }
+                "annotations": {
+                    "showbelow": "0",
+                    "constrainedScale": 0,//禁止宽高比
+                    "scaleText": 1,
+                    "groups": [
+                        {
+                            "id": "Callout",
+                            "items": [
+                                {
+                                    "id": "CalloutBase",
+                                    "type": "rectangle",
+                                    "radius": "3",
+                                    "x": "500",
+                                    "y": "70",
+                                    "tox": "580",
+                                    "toy": "90",
+                                    "alpha": "70",
+                                    "fillColor": "#0075c2",
+                                    "borderColor": "#DCF1FF",
+                                    "alpha": 30,
+                                    "link": "n-http://www.baidu.com"
+                                },
+                                {
+                                    "id": "CalloutTriangle",
+                                    "type": "polygon",
+                                    "sides": "3",
+                                    "startangle": "270",
+                                    "alpha": "90",
+                                    "x": "538",
+                                    "y": "94",
+                                    "fillColor": "#0075c2",
+                                    "radius": "9",
+                                    "borderColor": "#DCF1FF",
+                                    "alpha": 30,
+                                },
+                                {
+                                    "id": "CalloutLabel",
+                                    "type": "Text",
+                                    "fontSize": "12",
+                                    "bold": "1",
+                                    "x": "540",
+                                    "y": "80",
+                                    "text": '林志玲',
+                                    "fillcolor": "#FFFFFF",
+                                    "link": "n-http://www.baidu.com"
+                                }
+                            ]
+                        }
                     ]
-                  }
-                ]
-              },
+                },
                 "markers": {
                     "shapes": [
                         {
@@ -100,19 +115,32 @@
                             "borderThickness": 5
                         }
                     ],
-                    "items": [{
-                        "id": "taibei",
-                        "shapeid": "myCustomShape",
-                        "x": "360",
-                        "y": "70",
-                        "label": "",
-                        "labelpos": "top",
-                        "scale": 0.5
-                    }]
-                },
-                "entityDef": {
-                    "internalId": "HS",
-                    "newId": "合适"
+                    "items": [
+                        {
+                            "id": "starPoint",
+                            "shapeid": "myCustomShape",
+                            "x": "360",
+                            "y": "70",
+                            "label": "",
+                            "labelpos": "top",
+                            "scale": 0.5
+                        },
+                        {
+                            "id": "endPoint",
+                            "shapeid": "myCustomShape",
+                            "x": "420",
+                            "y": "166",
+                            "label": "",
+                            "labelpos": "top",
+                            "scale": 0.5
+                        }
+                    ],
+                    "connectors": [
+                        {
+                            "from": 'endPoint',
+                            "to": "starPoint",
+                        }
+                    ]
                 },
                 "colorrange": {
                     "minvalue": "0",
@@ -134,116 +162,434 @@
                     "maxvalue": 0
                 },
                 "data": [
-                  {
-                    "id": "10",
-                    "value": "3006"
-                  },
-                  {
-                    "id": "11",
-                    "value": "1889"
-                  },
-                  {
-                    "id": "12",
-                    "value": "69556"
-                  },
-                  {
-                    "id": "13",
-                    "value": "79410"
-                  },
-                  {
-                    "id": "14",
-                    "value": "39983"
-                  },
-                  {
-                    "id": "15",
-                    "value": "60617"
-                  },
-                  {
-                    "id": "16",
-                    "value": "40245"
-                  },
-                  {
-                    "id": "17",
-                    "value": "46554"
-                  },
-                  {
-                    "id": "18",
-                    "value": "53905"
-                  },
-                  {
-                    "id": "19",
-                    "value": "31318"
-                  },
-                  {
-                    "id": "20",
-                    "value": "69869"
-                  },
-                  {
-                    "id": "21",
-                    "value": "75522"
-                  },
-                  {
-                    "id": "22",
-                    "value": "74883"
-                  },
-                  {
-                    "id": "23",
-                    "value": "55317"
-                  },
-                  {
-                    "id": "24",
-                    "value": "34945"
-                  },
-                  {
-                    "id": "25",
-                    "value": "36672"
-                  },
-                  {
-                    "id": "07",
-                    "value": "31227"
-                  },
-                  {
-                    "id": "03",
-                    "value": "72664"
-                  },
-                  {
-                    "id": "09",
-                    "value": "45732"
-                  },
-                  {
-                    "id": "05",
-                    "value": "50745"
-                  },
-                  {
-                    "id": "02",
-                    "value": "73528"
-                  },
-                  {
-                    "id": "08",
-                    "value": "83014"
-                  },
-                  {
-                    "id": "06",
-                    "value": "87739"
-                  },
-                  {
-                    "id": "01",
-                    "value": "87739"
-                  },
-                  {
-                    "id": "04",
-                    "value": "87739"
-                  }
+                    {
+                        "id": "10",
+                        "value": "3006",
+                    },
+                    {
+                        "id": "11",
+                        "value": "1889"
+                    },
+                    {
+                        "id": "12",
+                        "value": "69556"
+                    },
+                    {
+                        "id": "13",
+                        "value": "79410"
+                    },
+                    {
+                        "id": "14",
+                        "value": "39983"
+                    },
+                    {
+                        "id": "15",
+                        "value": "60617"
+                    },
+                    {
+                        "id": "16",
+                        "value": "40245"
+                    },
+                    {
+                        "id": "17",
+                        "value": "46554"
+                    },
+                    {
+                        "id": "18",
+                        "value": "53905"
+                    },
+                    {
+                        "id": "19",
+                        "value": "31318"
+                    },
+                    {
+                        "id": "20",
+                        "value": "69869"
+                    },
+                    {
+                        "id": "21",
+                        "value": "75522"
+                    },
+                    {
+                        "id": "22",
+                        "value": "74883"
+                    },
+                    {
+                        "id": "23",
+                        "value": "55317"
+                    },
+                    {
+                        "id": "24",
+                        "value": "34945"
+                    },
+                    {
+                        "id": "25",
+                        "value": "36672"
+                    },
+                    {
+                        "id": "07",
+                        "value": "31227"
+                    },
+                    {
+                        "id": "03",
+                        "value": "72664"
+                    },
+                    {
+                        "id": "09",
+                        "value": "45732"
+                    },
+                    {
+                        "id": "05",
+                        "value": "50745"
+                    },
+                    {
+                        "id": "02",
+                        "value": "73528"
+                    },
+                    {
+                        "id": "08",
+                        "value": "83014"
+                    },
+                    {
+                        "id": "06",
+                        "value": "87739"
+                    },
+                    {
+                        "id": "01",
+                        "value": "87739"
+                    },
+                    {
+                        "id": "04",
+                        "value": "87739"
+                    }
                 ]
             },
             "events": {
-                "entityClick": function() {
-                    alert("You have clicked on");
+                "entityClick": function(evt,data) {
+                    title = data.label;
+                },
+                "rendered": function(evt,arg){
+                    renderNews(arg)
                 }
             },
 
         });
         salesByState.render();
+        document.getElementById('shownews').addEventListener('click',function(){
+            var mapClone = salesByState.clone({
+
+            });
+            mapClone.render();
+        });
+        var data = {
+            "chart": {
+                "id": "taiwanchart",
+                "caption": "台湾地域风向指标",
+                "logoURL": "",
+                "showLabels": 1,
+                "showToolTip": 1,
+                "exportEnabled": 1,
+                "exportFormats": "PNG=导出为png|JPG=导出为JPG|PDF=导出为PDF",
+                "exportFileName": "台湾地域风向指标",
+                "useSNameInToolTip": 0,
+                "animation": "0",
+                "showbevel": "0",
+                "usehovercolor": "1",
+                "canvasbordercolor": "FFFFFF",
+                "bordercolor": "FFFFFF",
+                "showlegend": "0",
+                "showshadow": "0",
+                "legendposition": "BOTTOM",
+                "legendborderalpha": "0",
+                "legendbordercolor": "ffffff",
+                "legendallowdrag": "0",
+                "legendshadow": "0",
+                "connectorcolor": "000000",
+                "fillalpha": "80",
+                "hovercolor": "CCCCCC",
+                "showborder": 0,
+                "theme": "fint",
+                "connectorColor": "#0CB2B0",
+                "connectorHoverColor": "#339933"
+            },
+            "annotations": {
+                "showbelow": "0",
+                "constrainedScale": 0,
+                "scaleText": 1,
+                "groups": [
+                    {
+                        "id": "Callout",
+                        "items": [
+                            {
+                                "id": "CalloutBase",
+                                "type": "rectangle",
+                                "radius": "3",
+                                "x": "500",
+                                "y": "70",
+                                "tox": "580",
+                                "toy": "90",
+                                "alpha": "70",
+                                "fillColor": "#0075c2",
+                                "borderColor": "#DCF1FF",
+                                "alpha": 30,
+                                "link": "n-http://www.baidu.com"
+                            },
+                            {
+                                "id": "CalloutTriangle",
+                                "type": "polygon",
+                                "sides": "3",
+                                "startangle": "270",
+                                "alpha": "90",
+                                "x": "538",
+                                "y": "94",
+                                "fillColor": "#0075c2",
+                                "radius": "9",
+                                "borderColor": "#DCF1FF",
+                                "alpha": 30
+                            },
+                            {
+                                "id": "CalloutLabel",
+                                "type": "Text",
+                                "fontSize": "12",
+                                "bold": "1",
+                                "x": "540",
+                                "y": "80",
+                                "text": "林志玲",
+                                "fillcolor": "#FFFFFF",
+                                "link": "n-http://www.baidu.com"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "markers": {
+                "shapes": [
+                    {
+                        "id": "myCustomShape",
+                        "type": "circle",
+                        "labelPadding": 0,
+                        "borderColor": "#000000",
+                        "borderAlpha": 10,
+                        "fillColor": "#83BDFF",
+                        "borderThickness": 5
+                    }
+                ],
+                "items": [
+                    {
+                        "id": "starPoint",
+                        "shapeid": "myCustomShape",
+                        "x": "360",
+                        "y": "70",
+                        "label": "",
+                        "labelpos": "top",
+                        "scale": 0.5
+                    },
+                    {
+                        "id": "endPoint",
+                        "shapeid": "myCustomShape",
+                        "x": "420",
+                        "y": "166",
+                        "label": "",
+                        "labelpos": "top",
+                        "scale": 0.5
+                    }
+                ],
+                "connectors": [
+                    {
+                        "from": "endPoint",
+                        "to": "starPoint"
+                    }
+                ]
+            },
+            "colorrange": {
+                "minvalue": "0",
+                "startlabel": "Low",
+                "endlabel": "High",
+                "code": "e44a00",
+                "gradient": "1",
+                "color": [
+                    {
+                        "maxvalue": 30000,
+                        "displayvalue": "Average",
+                        "code": "f8bd19"
+                    },
+                    {
+                        "maxvalue": 100000,
+                        "code": "6baa01"
+                    }
+                ],
+                "maxvalue": 0
+            },
+            "data": [
+                {
+                    "id": "10",
+                    "value": "3006"
+                },
+                {
+                    "id": "11",
+                    "value": "1889"
+                },
+                {
+                    "id": "12",
+                    "value": "69556"
+                },
+                {
+                    "id": "13",
+                    "value": "79410"
+                },
+                {
+                    "id": "14",
+                    "value": "39983"
+                },
+                {
+                    "id": "15",
+                    "value": "60617"
+                },
+                {
+                    "id": "16",
+                    "value": "40245"
+                },
+                {
+                    "id": "17",
+                    "value": "46554"
+                },
+                {
+                    "id": "18",
+                    "value": "53905"
+                },
+                {
+                    "id": "19",
+                    "value": "31318"
+                },
+                {
+                    "id": "20",
+                    "value": "69869"
+                },
+                {
+                    "id": "21",
+                    "value": "75522"
+                },
+                {
+                    "id": "22",
+                    "value": "74883"
+                },
+                {
+                    "id": "23",
+                    "value": "55317"
+                },
+                {
+                    "id": "24",
+                    "value": "34945"
+                },
+                {
+                    "id": "25",
+                    "value": "36672"
+                },
+                {
+                    "id": "07",
+                    "value": "31227"
+                },
+                {
+                    "id": "03",
+                    "value": "72664"
+                },
+                {
+                    "id": "09",
+                    "value": "45732"
+                },
+                {
+                    "id": "05",
+                    "value": "50745"
+                },
+                {
+                    "id": "02",
+                    "value": "73528"
+                },
+                {
+                    "id": "08",
+                    "value": "83014"
+                },
+                {
+                    "id": "06",
+                    "value": "87739"
+                },
+                {
+                    "id": "01",
+                    "value": "87739"
+                },
+                {
+                    "id": "04",
+                    "value": "87739"
+                }
+            ]
+        };
+        //salesByState.setJSONUrl('./chart.json'); //静态数据
+        salesByState.setJSONData(data); //动态数据获取方法
+
+        function renderNews(arg) {
+            var chart = FusionCharts.getObjectReference("taiwan");
+
+            /*var svgNS="http://www.w3.org/2000/svg";
+             var rect = document.createElementNS(svgNS,'rect');
+             var text = document.createElementNS(svgNS,'text');
+             var tspan = document.createElementNS(svgNS,'tspan');
+             rect.setAttribute("x",600);
+             rect.setAttribute("y",200);
+             rect.setAttribute("fill","#678677");
+             rect.setAttribute("height",200);
+             rect.setAttribute("width",200);
+             text.setAttribute("x", 200);
+             text.setAttribute("y", 200);
+             console.log(chart);
+             console.log(chart.children[0]);
+             chart.children[0].appendChild(rect);*/
+            var newsData = {
+                code: 0,
+                newsData: [
+                    {
+                        id: 1,
+                        title: '台湾一桃园飞吉隆坡班机蒙皮刮损 300名旅客受影响',
+                        url: "http://www.baidu.com",
+                        time: '02-20 16:00'
+                    },
+                    {
+                        id: 2,
+                        title: '台湾学者批蔡英文自造军备政策是“政治摇头丸”',
+                        url: "http://www.baidu.com",
+                        time: '02-20 16:00'
+                    }
+                ],
+                message: '热词获取成功'
+            };
+            var pointData1 = {
+                code: 0,
+                pointData: [
+                    {
+                        id: '01',
+                        city: '彰化县',
+                        title: '马英九'
+                    },
+                    {
+                        id: '02',
+                        city: '嘉义县',
+                        title: '蔡英文'
+                    }
+                ],
+                message: '热点新闻获取成功'
+            };
+            var pointData = {};
+
+            var draw = SVG(chart.children[0]);
+            var rect0 = draw.rect(200, 200).attr({ fill: '#fff',x: 590,y: 200,stroke: "#E1E1E6"}).stroke({width: 1});
+            var rect1 = draw.rect(200,27).attr({ fill: '#E6F5FF',x: 590,y: 200});
+            var text1 = draw.text(title+'的本地新闻').attr({x: 600,y: 200});
+            var text2 = draw.link('http://news.baidu.com').target('_blank').text(function(add) {
+                add.tspan('更多').fill('#2463B2').attr({x: 750,y: 220,})
+            }).attr({x: 600,y: 200}).style({'cursor': 'pointer'});
+            for(var i=0;i<newsData.newsData.length;i++){
+                draw.link(newsData.newsData[i].url).target('_blank').text(newsData.newsData[i].title).attr({x: 600,y: 200+(i+1)*50}).style({'cursor': 'pointer'});
+            }
+        }
     });
 </script>
-</html>
+</html>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
